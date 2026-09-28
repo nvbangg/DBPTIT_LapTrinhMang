@@ -1,5 +1,5 @@
 # [Đề và Code môn Lập trình mạng](https://github.com/nvbangg/DBPTIT_LapTrinhMang) trên [DBPTIT](https://db.ptit.edu.vn)
-## Source: https://github.com/nvbangg/PTIT_Docs
+## Source: https://github.com/nvbangg/PTIT-Docs
 
 - **Tổng số câu hỏi**: 37
 
