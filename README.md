@@ -1,4 +1,7 @@
-# Code Lập trình mạng PTIT
+# Code Lập trình mạng trên DBPTIT
+
+- [Đề môn Lập trình mạng](DB_PTIT_EXERCISES.md)
+- Source: https://github.com/nvbangg/PTIT-Docs
 
 ## TCP
 
