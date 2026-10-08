@@ -8,7 +8,7 @@ import java.net.InetAddress;
 
 import UDP.Student;
 
-public class UDP_OBJECT_UN9ZNrMb_copy {
+public class UDP_OBJECT1 {
     public static void main(String[] args) throws Exception {
         DatagramSocket socket = new DatagramSocket();
         InetAddress ip = InetAddress.getByName("36.50.135.242");
@@ -43,8 +43,6 @@ public class UDP_OBJECT_UN9ZNrMb_copy {
         student.email = email + "@ptit.edu.vn";
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        baos.write()
-
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(student);
         oos.flush();

@@ -53,6 +53,7 @@ public class TCP {
         int bytes = is.read(buff); // là số lượng byte thực tế nhận được
         String str = new String(buff, 0, bytes).trim(); // Không được dùng buff.length để tạo String vì buff có thể chưa được lấp đầy.
 ```
+- không cần `.flush()` vì ghi xuống socket ngay ở `OutputStream os = socket.getOutputStream();` mà không qua trung gian để giữ dữ liệu chờ
 - `read(buff)` ở đây là đọc dữ liệu từ mạng để đổ vào mảng buff.
 - Nếu `write(buff)` thì sẽ là lấy dữ liệu từ buff để ghi ra đĩa/server
 

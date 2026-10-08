@@ -3,8 +3,10 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
-public class TCP_CHARACTER_jNEYbPud {
+public class TCP_CHARACTER1 {
     public static void main(String[] args) throws Exception {
         Socket socket = new Socket("36.50.135.242", 2208);
 
@@ -13,20 +15,18 @@ public class TCP_CHARACTER_jNEYbPud {
 
         bw.write("B23DCCN067;jNEYbPud\n");
         bw.flush();
-        String input = br.readLine();
 
-        String[] a = input.split(", ");
-        String res = "";
+        String str = br.readLine();
+        List<String> edu = new ArrayList<>();
+        String[] a = str.split(", ");
         for (String s : a){
             if (s.endsWith(".edu")){
-                res += s + ", ";
+                edu.add(s);
             }
         }
-        if (res.length()>0){
-            res = res.substring(0, res.length()-2);
-        }
+        String res = String.join(", ", edu);
 
-        bw.write(res + "\n");
+        bw.write(res +"\n");
         bw.flush();
 
         socket.close();

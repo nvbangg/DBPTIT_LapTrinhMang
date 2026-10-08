@@ -10,6 +10,7 @@ public class Customer implements Serializable {
     public String name;
     public String dayOfBirth;
     public String userName;
+    
     public Customer() {
     }
     public Customer(int id, String code, String name, String dayOfBirth, String userName) {

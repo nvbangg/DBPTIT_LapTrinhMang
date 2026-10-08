@@ -7,7 +7,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import UDP.Customer;
 
-public class UDP_OBJECT_xcFNQUI4 {
+public class UDP_OBJECT2 {
     public static void main(String[] args) throws Exception {
         DatagramSocket socket = new DatagramSocket();
         InetAddress ip = InetAddress.getByName("36.50.135.242");

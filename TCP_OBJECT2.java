@@ -4,7 +4,7 @@ import java.net.Socket;
 
 import TCP.Customer;
 
-public class TCP_OBJECT_AjfSNHkA {
+public class TCP_OBJECT2 {
     public static void main(String[] args) throws Exception {
         Socket socket = new Socket("36.50.135.242", 2209);
 
@@ -15,27 +15,27 @@ public class TCP_OBJECT_AjfSNHkA {
         oos.flush();
 
         Customer customer = (Customer) ois.readObject();
-        String[] words = customer.name.trim().toLowerCase().split(" ");
-        String lastName = words[words.length - 1].toUpperCase();
+        String[] words = customer.name.split(" ");
+        String lastName = words[words.length-1].toUpperCase();
         String firstName = "";
-        for (int i = 0; i<words.length-1; i++){
-            firstName += Character.toUpperCase(words[i].charAt(0))+ words[i].substring(1) + " ";
+        for (int i=0; i< words.length-1; i++){
+            firstName += Character.toUpperCase(words[i].charAt(0)) + words[i].substring(1).toLowerCase() +" ";
         }
-        customer.name = lastName + ", "+ firstName.trim();
+        customer.name =  lastName+", "+ firstName.trim();
 
-        String[] dob = customer.dayOfBirth.trim().split("-");
-        customer.dayOfBirth = dob[1] + "/" + dob[0] + "/" + dob[2];
-
-        String user = "";
-        for (int i = 0; i< words.length-1; i++){
-            user+= words[i].charAt(0);
-           
-        }
-        user += words[words.length -1];
-        customer.userName = user.toLowerCase();
+        String[] dob = customer.dayOfBirth.split("-");
+        customer.dayOfBirth = dob[1]+"/"+dob[0]+"/"+dob[2];
         
+        String user = "";
+        for (int i=0; i<words.length-1; i++){
+            user+= words[i].charAt(0);
+        }
+        user += words[words.length-1];
+        customer.userName = user.toLowerCase();
+
         oos.writeObject(customer);
         oos.flush();
+
         socket.close();
     }
 }

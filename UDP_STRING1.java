@@ -2,7 +2,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-public class UDP_STRING_0qGfT6B4 {
+public class UDP_STRING1 {
     public static void main(String[] args) throws Exception {
         DatagramSocket socket = new DatagramSocket();
         InetAddress ip = InetAddress.getByName("36.50.135.242");

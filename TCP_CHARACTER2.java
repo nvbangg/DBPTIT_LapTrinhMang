@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class TCP_CHARACTER_oaBOIwEF {
+public class TCP_CHARACTER2 {
     public static void main(String[] args) throws Exception {
         Socket socket = new Socket("36.50.135.242", 2208);
 
@@ -15,25 +15,23 @@ public class TCP_CHARACTER_oaBOIwEF {
 
         bw.write("B23DCCN067;oaBOIwEF\n");
         bw.flush();
-        String input = br.readLine();
 
+        String str = br.readLine();
         Map<Character, Integer> map = new LinkedHashMap<>();
-        for (char c : input.toCharArray()){
+        for (char c : str.toCharArray()){
             if (Character.isLetterOrDigit(c)){
-                map.put(c, map.getOrDefault(c, 0) +1);
-
+                map.put(c, map.getOrDefault(c, 0)+1);
             }
         }
 
         String res = "";
         for (char c : map.keySet()){
-            int cnt = map.get(c);
-            if (cnt>1){
-                res += c + ":"+cnt+ ",";
+            if (map.get(c)>1){
+                res += c+":"+map.get(c)+",";
             }
         }
 
-        bw.write(res + "\n");
+        bw.write(res+"\n");
         bw.flush();
         
         socket.close();
