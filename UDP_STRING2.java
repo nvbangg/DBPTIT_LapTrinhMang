@@ -15,9 +15,8 @@ public class UDP_STRING2 {
         DatagramPacket dp = new DatagramPacket(buff, buff.length);
         socket.receive(dp);
 
-        String s = new String(dp.getData(), 0, dp.getLength()).trim();
-        String[] parts = s.split(";", 2);
-        String[] words = parts[1].trim().toLowerCase().split(" ");
+        String[] parts = new String(buff, 0, dp.getLength()).split(";");
+        String[] words = parts[1].toLowerCase().split(" ");
         for (int i = 0; i < words.length; i++) {
             words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
         }
@@ -25,6 +24,7 @@ public class UDP_STRING2 {
 
         byte[] out = res.getBytes();
         socket.send(new DatagramPacket(out, out.length, ip, port));
+        
         socket.close();
     }
 }

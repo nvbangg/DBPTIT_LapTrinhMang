@@ -15,20 +15,16 @@ public class UDP_DATA2 {
         DatagramPacket dp = new DatagramPacket(buff, buff.length);
         socket.receive(dp);
 
-        String s = new String(dp.getData(), 0, dp.getLength()).trim();
-
-        String[] parts = s.split(";");
+        String[] parts = new String(buff, 0, dp.getLength()).split(";");
         String[] nums = parts[1].split(",");
-
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
 
         for (String x : nums) {
-            int val = Integer.parseInt(x.trim());
+            int val = Integer.parseInt(x);
             if (val > max) max = val;
             if (val < min) min = val;
         }
-
         String res = parts[0] + ";" + max + "," + min;
 
         byte[] out = res.getBytes();

@@ -19,13 +19,13 @@ public class UDP_DATA1 {
         int n = Integer.parseInt(parts[1]);
         boolean[] seen = new boolean[n + 1];
         for (String x : parts[2].split(",")) {
-            seen[Integer.parseInt(x.trim())] = true;
+            seen[Integer.parseInt(x)] = true;
         }
         String res = parts[0] + ";";
         for (int i = 1; i <= n; i++) {
             if (!seen[i]) res += i + ",";
         }
-        if (res.endsWith(",")) res = res.substring(0, res.length() - 1);
+        res = res.substring(0, res.length() - 1);
 
         byte[] out = res.getBytes();
         socket.send(new DatagramPacket(out, out.length, ip, port));

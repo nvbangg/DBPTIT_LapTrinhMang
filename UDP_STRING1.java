@@ -15,11 +15,9 @@ public class UDP_STRING1 {
         DatagramPacket dp = new DatagramPacket(buff, buff.length);
         socket.receive(dp);
 
-        String s = new String(dp.getData(), 0, dp.getLength()).trim();
-
-        String[] parts = s.split(";", 2);
-        String requestId = parts[0].trim();
-        String data = parts[1].trim();
+        String[] parts = new String(buff, 0, dp.getLength()).split(";");
+        String requestId = parts[0];
+        String data = parts[1];
 
         int[] count = new int[256];
         for (char c : data.toCharArray()) {
