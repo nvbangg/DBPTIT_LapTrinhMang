@@ -145,7 +145,7 @@ Cả hai dạng đều gửi/nhận **chuỗi**. Data Type chỉ khác phần x�
 ```java
         // 4. Đọc chuỗi "requestId;data" từ gói tin
         String s = new String(buff, 0, dp.getLength());
-        String[] parts = s.split(";", 2);
+        String[] parts = s.split(";");
         String requestId = parts[0];
         String data = parts[1].trim();
 
