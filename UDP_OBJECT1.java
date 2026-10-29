@@ -21,9 +21,6 @@ public class UDP_OBJECT1 {
         DatagramPacket dp = new DatagramPacket(buff, buff.length);
         socket.receive(dp);
 
-        byte[] requestId = new byte[8];
-        System.arraycopy(dp.getData(), 0, requestId, 0, 8);
-
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(dp.getData(), 8, dp.getLength() - 8));
         Student student = (Student) ois.readObject();
 
@@ -38,19 +35,16 @@ public class UDP_OBJECT1 {
         String email = words[words.length-1];
         for (int i=0; i<words.length-1; i++){
             email += words[i].charAt(0);
-
         }
         student.email = email + "@ptit.edu.vn";
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.write(buff, 0, 8);
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(student);
         oos.flush();
 
-        byte[] obj = baos.toByteArray();
-        byte[] out = new byte[8+obj.length];
-        System.arraycopy(requestId, 0, out, 0, 8);
-        System.arraycopy(obj, 0, out, 8, obj.length);
+        byte[] out = baos.toByteArray();
         socket.send(new DatagramPacket(out, out.length, ip, port));
         
         socket.close();

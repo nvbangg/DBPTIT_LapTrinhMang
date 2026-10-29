@@ -92,7 +92,16 @@ public class TCP {
 
 ## UDP
 
+UDP dùng `DatagramSocket` để gửi/nhận từng gói `DatagramPacket`. Mỗi lần gửi cần chỉ rõ IP và port của Server.
+
+| Dạng đề | Port | Dữ liệu nhận / gửi kết quả |
+| --- | --- | --- |
+| UDP Data Type | 2207 | Chuỗi `requestId;dữ liệu` |
+| UDP String | 2208 | Chuỗi `requestId;dữ liệu` |
+| UDP Object | 2209 | 8 byte requestId + Object đã serialize |
+
 ### Cấu trúc chung:
+
 ```java
 import java.io.*;
 import java.net.*;
@@ -102,68 +111,80 @@ public class UDP {
         // 1. Khởi tạo Socket, IP, Port
         DatagramSocket socket = new DatagramSocket();
         InetAddress ip = InetAddress.getByName("36.50.135.242");
-        int port = 2207;
+        int port = 2207; // Đổi port theo dạng đề trong bảng trên
 
-        // 2. Gửi mã SV; Mã câu hỏi (chú ý: đề UDP PTIT thường có dấu ";" ở đầu)
+        // 2. Gửi ";Mã sinh viên;Mã câu hỏi" (có dấu ; ở đầu)
         byte[] req = ";B23DCCN067;toft6ekh".getBytes();
         socket.send(new DatagramPacket(req, req.length, ip, port));
 
-        // 3. Nhận gói tin từ Server về (Dùng chung cho cả 2 dạng)
-        byte[] buff = new byte[2048]; // 2048 byte bao trọn cả chuỗi lẫn Object
-        socket.receive(new DatagramPacket(buff, buff.length));
+        // 3. Nhận gói tin từ Server (dùng chung cho cả 3 dạng đề)
+        byte[] buff = new byte[2048]; // Buffer phải đủ lớn để chứa gói tin của đề
+        DatagramPacket dp = new DatagramPacket(buff, buff.length);
+        socket.receive(dp);
 
-        // --- BƯỚC 4, 5, 6: XỬ LÝ & TRẢ KẾT QUẢ THEO 2 DẠNG BÊN DƯỚI ---
+        // 4. Tách requestId và đọc dữ liệu theo dạng đề
+        // 5. Xử lý logic theo yêu cầu đề bài
+        // 6. Ghép requestId với kết quả và gửi về Server
+        // ! Cụ thể mẫu code phần 4, 5, 6 theo các dạng đề bên dưới
 
-        // 7. Đóng kết nối
+        // 7. Đóng socket
         socket.close();
     }
 }
 ```
-### 1. UDP String / Data Type
+
+- `req` / `out`: mảng byte cần gửi; `buff`: mảng byte dùng để nhận; `dp`: gói tin nhận được.
+- `dp.getLength()` là số byte thực tế nhận được; `buff.length` là sức chứa của buffer. Luôn đọc đúng `dp.getLength()`.
+- UDP gửi cả gói nên không cần ký tự xuống dòng `\n` hay `flush()` cho `socket.send()`.
+
+### 1. UDP Data Type / String
+
+Cả hai dạng đều gửi/nhận **chuỗi**. Data Type chỉ khác phần xử lý số, không dùng `DataInputStream` / `DataOutputStream` như TCP Data Stream.
+
 ```java
-        // Trích xuất chuỗi từ dp đã nhận ở trên
-        String s = new String(buff);
+        // 4. Đọc chuỗi "requestId;data" từ gói tin
+        String s = new String(buff, 0, dp.getLength());
         String[] parts = s.split(";", 2);
-        String requestId = parts[0].trim();
+        String requestId = parts[0];
         String data = parts[1].trim();
 
-        // Xử lý logic...
+        // 5. Xử lý data theo đề, lưu kết quả vào biến result
+        String result = "...";
 
-        // Gửi kết quả về Server
-        String res = requestId + ";" + "...";
+        // 6. Gửi chuỗi "requestId;kết quả"
+        String res = requestId + ";" + result;
         byte[] out = res.getBytes();
         socket.send(new DatagramPacket(out, out.length, ip, port));
 ```
 
-### 2. UDP Object
-```java
-        byte[] requestId = new byte[8];
-        System.arraycopy(buff, 0, requestId, 0, 8);
+- `split(";", 2)` tách thành tối đa 2 phần: requestId và toàn bộ dữ liệu phía sau.
+- Riêng đề `UDP_DATA1` nhận `requestId;n;dãy số`: dùng `split(";")`, đọc `n` ở `parts[1]`, dãy số ở `parts[2]`; tách các số bằng `split(",")`.
 
-        // Đọc Object từ dp đã nhận ở trên
-        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buff, 8, buff.length - 8));
+### 2. UDP Object
+
+Gói tin có dạng `[8 byte requestId][các byte Object]`. Giữ nguyên 8 byte đầu, chỉ đọc và sửa Object phía sau. Ví dụ với lớp `UDP.Student` (thêm `import UDP.Student;`):
+
+```java
+        // 4. Bỏ qua 8 byte requestId để đọc Object
+        ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(buff, 8, dp.getLength() - 8));
         Student student = (Student) ois.readObject();
 
-        // Xử lý logic trên student...
+        // 5. Sửa các thuộc tính của student theo đề bài
 
-        // Gửi lại đối tượng về Server
+        // 6. Ghi 8 byte requestId trước, rồi ghi Object vào cùng buffer gửi
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.write(buff, 0, 8);
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(student);
         oos.flush();
 
-        byte[] objBytes = baos.toByteArray();
-        byte[] out = new byte[8 + objBytes.length]; // Ghép 8 byte requestId + mảng byte Object rồi gửi về Server
-        System.arraycopy(requestId, 0, out, 0, 8);
-        System.arraycopy(objBytes, 0, out, 8, objBytes.length);
+        byte[] out = baos.toByteArray();
         socket.send(new DatagramPacket(out, out.length, ip, port));
 ```
-- `System.arraycopy(src, srcPos, dest, destPos, length)`
-        - src: Mảng chứa dữ liệu ban đầu cần lấy đi copy.
-        - srcPos: Vị trí bắt đầu lấy dữ liệu trên mảng nguồn.
-        - dest: Mảng nơi dữ liệu copy được dán vào.
-        - destPos: Vị trí (chỉ số index) bắt đầu dán dữ liệu vào mảng đích.
-        - length: Số lượng phần tử (số byte) cần sao chép.
-- `ByteArrayInputStream(mảng byte, vị trí bắt đầu, ĐỘ DÀI CẦN LẤY)`
 
+- Lớp đối tượng phải đúng package `UDP`, thuộc tính và `serialVersionUID` theo đề, có `implements Serializable`.
+- `ByteArrayInputStream(buff, 8, dp.getLength() - 8)`: đọc từ vị trí 8, lấy số byte còn lại của gói tin.
+- `baos.write(buff, 0, 8)`: chép nguyên 8 byte requestId vào đầu buffer gửi. Phải gọi **trước** `new ObjectOutputStream(baos)` vì lệnh khởi tạo này ghi header Object ngay.
+- `ObjectInputStream` / `ObjectOutputStream` ở đây đọc/ghi trên mảng byte trong bộ nhớ; `socket.receive()` / `socket.send()` mới là phần giao tiếp qua mạng.
 
+Nhớ luồng chung: **Tạo socket → gửi mã → nhận gói → tách requestId, xử lý → ghép requestId, gửi kết quả → đóng socket**.

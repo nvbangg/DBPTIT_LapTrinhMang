@@ -26,13 +26,9 @@ public class UDP_STRING1 {
             count[c]++;
         }
 
-        int max = 0;
-        char maxChar = 0;
+        char maxChar = data.charAt(0);
         for (char c : data.toCharArray()) {
-            if (count[c] > max) {
-                max = count[c];
-                maxChar = c;
-            }
+            if (count[c] > count[maxChar]) maxChar = c;
         }
 
         String pos = "";

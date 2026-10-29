@@ -17,16 +17,11 @@ public class UDP_STRING2 {
 
         String s = new String(dp.getData(), 0, dp.getLength()).trim();
         String[] parts = s.split(";", 2);
-        String requestId = parts[0];
-        String data = parts[1].trim();
-
-        String[] words = data.split(" ");
-        String res = "";
-
-        for (String w : words){
-            res += w.substring(0,1).toUpperCase() + w.substring(1).toLowerCase() + " ";
+        String[] words = parts[1].trim().toLowerCase().split(" ");
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1);
         }
-        res = requestId + ";" + res;
+        String res = parts[0] + ";" + String.join(" ", words);
 
         byte[] out = res.getBytes();
         socket.send(new DatagramPacket(out, out.length, ip, port));

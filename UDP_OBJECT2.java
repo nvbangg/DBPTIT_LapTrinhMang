@@ -20,40 +20,32 @@ public class UDP_OBJECT2 {
         DatagramPacket dp = new DatagramPacket(buff, buff.length);
         socket.receive(dp);
 
-        byte[] reqId = new byte[8];
-        System.arraycopy(dp.getData(), 0, reqId, 0, 8);
-
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(dp.getData(), 8, dp.getLength() - 8));
         Customer customer = (Customer) ois.readObject();
 
-        String[] words = customer.name.trim().toLowerCase().split("\\s+");
+        String[] words = customer.name.trim().toLowerCase().split(" ");
 
         String lastName = words[words.length - 1].toUpperCase();
         String firstName = "";
+        String user = "";
         for (int i=0; i<words.length - 1; i++){
             firstName += Character.toUpperCase(words[i].charAt(0)) + words[i].substring(1) + " ";
+            user += words[i].charAt(0);
         }
         customer.name = lastName + ", " + firstName.trim();
 
         String[] dob = customer.dayOfBirth.trim().split("-");
         customer.dayOfBirth = dob[1] + "/" + dob[0] + "/" + dob[2];
 
-        String user = "";
-        for (int i =0; i <words.length-1; i++){
-            user += words[i].charAt(0);
-        }
-        user += words[words.length-1];
-        customer.userName = user.toLowerCase();
+        customer.userName = user + words[words.length - 1];
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.write(buff, 0, 8);
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(customer);
         oos.flush();
 
-        byte[] objBytes = baos.toByteArray();
-        byte[] out = new byte[8 + objBytes.length];
-        System.arraycopy(reqId, 0, out, 0, 8);
-        System.arraycopy(objBytes, 0, out, 8, objBytes.length);
+        byte[] out = baos.toByteArray();
         socket.send(new DatagramPacket(out, out.length, ip, port));
 
         socket.close();
