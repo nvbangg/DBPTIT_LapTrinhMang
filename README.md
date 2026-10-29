@@ -1,6 +1,7 @@
 # Code Lập trình mạng trên DBPTIT
 
 - [Đề môn Lập trình mạng](DB_PTIT_EXERCISES.md)
+- [24 đề UDP trong sách bài tập 2024 và 23 lời giải](UDP2024/README.md)
 - Source: https://github.com/nvbangg/PTIT-Docs
 
 ## TCP
