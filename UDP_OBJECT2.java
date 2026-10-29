@@ -23,7 +23,7 @@ public class UDP_OBJECT2 {
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(dp.getData(), 8, dp.getLength() - 8));
         Customer customer = (Customer) ois.readObject();
 
-        String[] words = customer.name.trim().toLowerCase().split(" ");
+        String[] words = customer.name.toLowerCase().split(" ");
 
         String lastName = words[words.length - 1].toUpperCase();
         String firstName = "";
@@ -34,7 +34,7 @@ public class UDP_OBJECT2 {
         }
         customer.name = lastName + ", " + firstName.trim();
 
-        String[] dob = customer.dayOfBirth.trim().split("-");
+        String[] dob = customer.dayOfBirth.split("-");
         customer.dayOfBirth = dob[1] + "/" + dob[0] + "/" + dob[2];
 
         customer.userName = user + words[words.length - 1];

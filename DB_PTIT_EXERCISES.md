@@ -5,7 +5,7 @@
 
 ---
 
-## `TCP_CHARACTER` TCP - Character Stream
+## `TCP_CHARACTER1` TCP - Character Stream - Câu 1
 - Mã câu hỏi: `jNEYbPud`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -13,7 +13,7 @@
 
 ---
 
-## `TCP_BYTE_RAW` TCP - Byte Stream
+## `TCP_BYTE_RAW1` TCP - Byte Stream - Câu 1
 - Mã câu hỏi: `2bqXfIJH`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -21,7 +21,7 @@ Một chương trình server hỗ trợ kết nối qua giao thức TCP tại c�
 
 ---
 
-## `TCP_BYTE_RAW` TCP - Byte Stream
+## `TCP_BYTE_RAW2` TCP - Byte Stream - Câu 2
 - Mã câu hỏi: `8x3KygT7`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -29,7 +29,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `TCP_CHARACTER` TCP - Character Stream
+## `TCP_CHARACTER2` TCP - Character Stream - Câu 2
 - Mã câu hỏi: `oaBOIwEF`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -37,7 +37,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `TCP_DATA` TCP - Data Stream
+## `TCP_DATA1` TCP - Data Stream - Câu 1
 - Mã câu hỏi: `CR3z42T9`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -45,7 +45,7 @@ Một chương trình máy chủ cho phép kết nối qua TCP tại cổng 2207
 
 ---
 
-## `UDP_DATA` UDP - Data Type
+## `UDP_DATA1` UDP - Data Type - Câu 1
 - Mã câu hỏi: `toft6ekh`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -53,7 +53,7 @@ Một chương trình server cho phép giao tiếp qua giao thức UDP tại c�
 
 ---
 
-## `UDP_STRING` UDP - String
+## `UDP_STRING1` UDP - String - Câu 1
 - Mã câu hỏi: `0qGfT6B4`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -61,7 +61,7 @@ Một chương trình server cho phép kết nối qua giao thức UDP tại c�
 
 ---
 
-## `TCP_DATA` TCP - Data Stream
+## `TCP_DATA2` TCP - Data Stream - Câu 2
 - Mã câu hỏi: `1H9rZUmX`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -69,7 +69,7 @@ Mật mã caesar, còn gọi là mật mã dịch chuyển, để giải mã th�
 
 ---
 
-## `TCP_OBJECT` TCP - Object Stream
+## `TCP_OBJECT1` TCP - Object Stream - Câu 1
 - Mã câu hỏi: `Ak9J0e5D`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -77,7 +77,7 @@ Thông tin sản phẩm vì một lý do nào đó đã bị sửa đổi thành
 
 ---
 
-## `TCP_OBJECT` TCP - Object Stream
+## `TCP_OBJECT2` TCP - Object Stream - Câu 2
 - Mã câu hỏi: `AjfSNHkA`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -85,7 +85,7 @@ Thông tin khách hàng cần thay đổi định dạng lại cho phù hợp v�
 
 ---
 
-## `UDP_DATA` UDP - Data Type
+## `UDP_DATA2` UDP - Data Type - Câu 2
 - Mã câu hỏi: `cJpJP4lt`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -93,7 +93,7 @@ Thông tin khách hàng cần thay đổi định dạng lại cho phù hợp v�
 
 ---
 
-## `UDP_STRING` UDP - String
+## `UDP_STRING2` UDP - String - Câu 2
 - Mã câu hỏi: `EkI693uw`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -101,7 +101,7 @@ Thông tin khách hàng cần thay đổi định dạng lại cho phù hợp v�
 
 ---
 
-## `UDP_OBJECT` UDP - Object
+## `UDP_OBJECT1` UDP - Object - Câu 1
 - Mã câu hỏi: `UN9ZNrMb`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -109,7 +109,7 @@ Thông tin khách hàng cần thay đổi định dạng lại cho phù hợp v�
 
 ---
 
-## `UDP_OBJECT` UDP - Object
+## `UDP_OBJECT2` UDP - Object - Câu 2
 - Mã câu hỏi: `xcFNQUI4`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -117,7 +117,7 @@ Thông tin khách hàng cần thay đổi định dạng lại cho phù hợp v�
 
 ---
 
-## `WS_DATA` WS - DataService
+## `WS_DATA1` WS - DataService - Câu 1
 - Mã câu hỏi: `VU9y8T9o`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -132,7 +132,7 @@ d. Kết thúc chương trình client.
 
 ---
 
-## `RMI_BYTE` RMI - Byte
+## `RMI_BYTE1` RMI - Byte - Câu 1
 - Mã câu hỏi: `c4epJ349`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -140,7 +140,7 @@ Một chương trình (tạm gọi là RMI Server) cung cấp giao diện cho ph
 
 ---
 
-## `RMI_BYTE` RMI - Byte
+## `RMI_BYTE2` RMI - Byte - Câu 2
 - Mã câu hỏi: `nEUEhw46`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -148,7 +148,7 @@ Một chương trình (tạm gọi là RMI Server) cung cấp giao diện cho ph
 
 ---
 
-## `RMI_CHARACTER` RMI - Character
+## `RMI_CHARACTER1` RMI - Character - Câu 1
 - Mã câu hỏi: `B9djTG98`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -156,7 +156,7 @@ Một chương trình (tạm gọi là RMI Server) cung cấp giao diện cho ph
 
 ---
 
-## `RMI_CHARACTER` RMI - Character
+## `RMI_CHARACTER2` RMI - Character - Câu 2
 - Mã câu hỏi: `wWlXqfMz`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -164,7 +164,7 @@ Một chương trình (tạm gọi là RMI Server) cung cấp giao diện cho ph
 
 ---
 
-## `WS_DATA` WS - DataService
+## `WS_DATA2` WS - DataService - Câu 2
 - Mã câu hỏi: `Wve7GCTx`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -178,7 +178,7 @@ d. Kết thúc chương trình client.
 
 ---
 
-## `WS_CHARACTER` WS - CharacterService
+## `WS_CHARACTER1` WS - CharacterService - Câu 1
 - Mã câu hỏi: `tvRP4LWy`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -192,7 +192,7 @@ d. Kết thúc chương trình client.
 
 ---
 
-## `WS_CHARACTER` WS - CharacterService
+## `WS_CHARACTER2` WS - CharacterService - Câu 2
 - Mã câu hỏi: `RoIwRzSu`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -208,7 +208,7 @@ d. Kết thúc chương trình client.
 
 ---
 
-## `WS_OBJECT` WS - ObjectService
+## `WS_OBJECT1` WS - ObjectService - Câu 1
 - Mã câu hỏi: `vQhpNPxe`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -223,7 +223,7 @@ d. Kết thúc chương trình client.
 
 ---
 
-## `WS_OBJECT` WS - ObjectService
+## `WS_OBJECT2` WS - ObjectService - Câu 2
 - Mã câu hỏi: `vv4p7N32`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -240,7 +240,7 @@ d. Kết thúc chương trình client.
 
 ---
 
-## `TCP_GZIP` TCP - GZIP Stream
+## `TCP_GZIP1` TCP - GZIP Stream - Câu 1
 - Mã câu hỏi: `NdhlLPZd`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -248,7 +248,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `TCP_GZIP` TCP - GZIP Stream
+## `TCP_GZIP2` TCP - GZIP Stream - Câu 2
 - Mã câu hỏi: `UrLXNu5H`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -256,7 +256,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `TCP_NIO` TCP - NIO Stream
+## `TCP_NIO1` TCP - NIO Stream - Câu 1
 - Mã câu hỏi: `de5khSZV`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -264,7 +264,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `TCP_NIO` TCP - NIO Stream
+## `TCP_NIO2` TCP - NIO Stream - Câu 2
 - Mã câu hỏi: `kEKWsBOl`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -272,7 +272,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `RMI_DATA` [RMI Data] Tìm vị trí đỉnh cục bộ
+## `RMI_DATA1` [RMI Data] Tìm vị trí đỉnh cục bộ - Câu 1
 - Mã câu hỏi: `yXDW6AQR`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -288,7 +288,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `RMI_DATA` [RMI Data] Thống kê số thực nâng cao
+## `RMI_DATA2` [RMI Data] Thống kê số thực nâng cao - Câu 2
 - Mã câu hỏi: `rHeX1Kod`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -304,7 +304,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `RMI_OBJECT` [RMI Object] Phân tầng xử lý SLA ticket
+## `RMI_OBJECT1` [RMI Object] Phân tầng xử lý SLA ticket - Câu 1
 - Mã câu hỏi: `xznpNIyq`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -320,7 +320,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `SOAP_DATA` [SOAP Data] Đếm số chẵn và số lẻ
+## `SOAP_DATA1` [SOAP Data] Đếm số chẵn và số lẻ - Câu 1
 - Mã câu hỏi: `dkEZLFFv`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -337,7 +337,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `SOAP_CHARACTER` SOAP Character — Reverse a String
+## `SOAP_CHARACTER1` SOAP Character — Reverse a String - Câu 1
 - Mã câu hỏi: `v2B9F0NV`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -365,7 +365,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `SOAP_OBJECT` SOAP Object — Calculate Final Price
+## `SOAP_OBJECT1` SOAP Object — Calculate Final Price - Câu 1
 - Mã câu hỏi: `KchxMEtQ`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -394,7 +394,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `SOAP_DATA` [SOAP Data] Đếm số nguyên tố và checksum
+## `SOAP_DATA2` [SOAP Data] Đếm số nguyên tố và checksum - Câu 2
 - Mã câu hỏi: `06hJh2Q1`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -410,7 +410,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `SOAP_CHARACTER` [SOAP Character] Che và sắp xếp mảng log
+## `SOAP_CHARACTER2` [SOAP Character] Che và sắp xếp mảng log - Câu 2
 - Mã câu hỏi: `SX3iqOut`
 - Exam Server: `36.50.135.242`
 ### Nội dung
@@ -426,7 +426,7 @@ Một chương trình server cho phép kết nối qua giao thức TCP tại c�
 
 ---
 
-## `SOAP_OBJECT` [SOAP Object] Lọc và sắp xếp khách hàng VIP
+## `SOAP_OBJECT2` [SOAP Object] Lọc và sắp xếp khách hàng VIP - Câu 2
 - Mã câu hỏi: `gZOiIVi5`
 - Exam Server: `36.50.135.242`
 ### Nội dung

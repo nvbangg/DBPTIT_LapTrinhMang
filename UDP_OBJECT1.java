@@ -24,7 +24,7 @@ public class UDP_OBJECT1 {
         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(dp.getData(), 8, dp.getLength() - 8));
         Student student = (Student) ois.readObject();
 
-        String[] words = student.name.trim().toLowerCase().split(" ");
+        String[] words = student.name.toLowerCase().split(" ");
 
         String name = "";
         for (String w: words){
