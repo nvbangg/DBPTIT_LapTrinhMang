@@ -1,8 +1,10 @@
 # Đề bài UDP trong Sách bài tập Lập trình mạng năm 2024
 
-Nguồn: [Bài tập Lập trình mạng của Hungdn năm 2024](<../BT/Bai tap - Lap trinh mang - Hungdn - 2024.docx>), Phần 2 Lập trình Socket với giao thức UDP.
+Nguồn: [Bài tập Lập trình mạng của Hungdn năm 2024](<Bai tap - Lap trinh mang - Hungdn - 2024.docx>), Phần 2 Lập trình Socket với giao thức UDP.
 
 Gồm 24 câu: 10 câu UDP Data type, 9 câu UDP Character và 5 câu UDP Object. Số câu được giữ theo từng nhóm trong tài liệu gốc.
+
+Các file Java trong thư mục này là giải mẫu, không khai báo package. Các lớp `Student`, `Customer`, `Product`, `Book` đặt cùng thư mục với bài Object.
 
 ## UDP Data type
 

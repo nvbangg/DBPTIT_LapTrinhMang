@@ -1,5 +1,3 @@
-package UDP2024;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
@@ -7,10 +5,7 @@ import java.io.ObjectOutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.nio.charset.StandardCharsets;
 import java.util.Locale;
-
-import UDP.Book;
 
 public class UDP_OBJECT5 {
     public static void main(String[] args) throws Exception {
@@ -18,7 +13,7 @@ public class UDP_OBJECT5 {
         InetAddress ip = InetAddress.getByName(args.length > 0 ? args[0] : "36.50.135.242");
         int port = args.length > 1 ? Integer.parseInt(args[1]) : 809;
 
-        byte[] req = ";B23DCCN067;THAY_MA_CAU_HOI".getBytes(StandardCharsets.UTF_8);
+        byte[] req = ";B23DCCN067;THAY_MA_CAU_HOI".getBytes();
         socket.send(new DatagramPacket(req, req.length, ip, port));
 
         byte[] buff = new byte[65507];

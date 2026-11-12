@@ -1,7 +1,6 @@
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
-import java.nio.charset.StandardCharsets;
 
 public class TCP_NIO2 {
     static void readFull(SocketChannel sc, ByteBuffer b) throws Exception {
@@ -18,11 +17,11 @@ public class TCP_NIO2 {
         int n = b.getInt();
         b = ByteBuffer.allocate(n);
         readFull(sc, b);
-        return new String(b.array(), StandardCharsets.UTF_8);
+        return new String(b.array());
     }
 
     static void sendFrame(SocketChannel sc, String str) throws Exception {
-        byte[] data = str.getBytes(StandardCharsets.UTF_8);
+        byte[] data = str.getBytes();
         ByteBuffer b = ByteBuffer.allocate(4 + data.length);
         b.putInt(data.length);
         b.put(data);
